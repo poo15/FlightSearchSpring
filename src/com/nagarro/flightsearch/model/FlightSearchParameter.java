@@ -14,14 +14,15 @@ public class FlightSearchParameter {
 	private String arrivalLocation;
 	private String flightclass;
 	private String flightDate;
-	public String getFlightDate() {
-		return flightDate;
-	}
-	public void setFlightDate(String flightDate) {
-		this.flightDate = flightDate;
-	}
-	private String outputPreference;
 	
+	private String outputPreference;
+	private String airline;
+	public String getAirline() {
+		return airline;
+	}
+	public void setAirline(String airline) {
+		this.airline = airline;
+	}
 	public String getDepartureLocation() {
 		return departureLocation;
 	}
@@ -46,12 +47,19 @@ public class FlightSearchParameter {
 	public void setOutputPreference(String outputPreference) {
 		this.outputPreference = outputPreference;
 	}
+	public String getFlightDate() {
+		return flightDate;
+	}
+	public void setFlightDate(String flightDate) {
+		this.flightDate = flightDate;
+	}
 	@Override
 	public String toString() {
 		return "FlightSearchParameter [departureLocation=" + departureLocation + ", arrivalLocation=" + arrivalLocation
 				+ ", flightclass=" + flightclass + ", flightDate=" + flightDate + ", outputPreference="
-				+ outputPreference + "]";
+				+ outputPreference + ", airline=" + airline + "]";
 	}
+	
 	
 	
 	

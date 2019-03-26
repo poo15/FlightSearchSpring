@@ -21,11 +21,10 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 	crossorigin="anonymous"></script>
-<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-         
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
- <link href="./css/prettify-1.0.css" rel="stylesheet">
+
+<link rel="stylesheet" href="datestyle.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <title>Search Flight</title>
 <style type="text/css">
 	.error{
@@ -81,7 +80,7 @@
 					<form:errors cssClass="error" path="departureLocation" />
 				</div>
 				<div class="col">
-                     <form:input type="text" path="flightDate" class="form-control"  id="datepicker" readonly="readonly"/>
+                     <form:input type="text" onkeydown="return false" path="flightDate" class="form-control"  id="datepicker" />
                 </div>
 				<div class="col">
 					<form:input type="text" class="form-control" path="arrivalLocation"
@@ -98,7 +97,16 @@
 				<div class="col">
 					<form:select class="form-control" id="sort" path="outputPreference">
 						<option value="fare">Fare</option>
-						<option value="both">Fare And Duration</option>
+						<option value="duration">Duration</option>
+					</form:select>
+					<form:errors cssClass="error" path="outputPreference" />
+				</div>
+				<div class="col">
+					<form:select class="form-control" id="airline" path="airline">
+						<option value="">Select Your Flight</option>
+						<option value="AI">AirIndia</option>
+						<option value="6E">Indigo</option>
+						<option value="9W">Jet Air</option>
 					</form:select>
 					<form:errors cssClass="error" path="outputPreference" />
 				</div>

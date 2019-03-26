@@ -3,13 +3,23 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean name="DAO" 
-		  class="com.nagarro.flightsearch.dao.implementation.DaoImplementation">
+	<bean name="DAOLogin" 
+		  class="com.nagarro.flightsearch.dao.impl.LoginDaoImpl">
 	
 	</bean>
 	
-	<bean name="service" 
-		  class="com.nagarro.flightsearch.service.implementation.ServiceImplementaion">  
+	<bean name="loginService" 
+		  class="com.nagarro.flightsearch.service.implementation.UserLoginServiceImpl">  
+		  <property name="dao" ref="DAOLogin"></property>
+	</bean>	
+	
+	<bean name="DAO" 
+		  class="com.nagarro.flightsearch.dao.impl.LoginDaoImpl">
+	
+	</bean>
+	
+	<bean name="searchService" 
+		  class="com.nagarro.flightsearch.service.implementation.FlightSearchServiceImpl">  
 		  <property name="dao" ref="DAO"></property>
 	</bean>	
 	

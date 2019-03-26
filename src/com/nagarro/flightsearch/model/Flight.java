@@ -16,26 +16,26 @@ import org.hibernate.annotations.DynamicUpdate;
 @DynamicUpdate
 public class Flight {
 	@Id
-	@Column(name="Flight_Id")
+	@Column(name="flightId")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int flightId;
-	@Column(name="Flight_No")
+	@Column(name="flightNo")
 	private String flightNo;
-	@Column(name="Departure_Location")
-	private String departureLoc;
-	@Column(name="Arrival_Location")
-	private String arrivalLoc;
-	@Column(name="valid_Till")
-	private Date validTill;
-	@Column(name="Flight_Time")
+	@Column(name="departureLocation")
+	private String departureLocation;
+	@Column(name="arrivalLocation")
+	private String arrivalLocation;
+	@Column(name="validTill")
+	private String validTill;
+	@Column(name="flightTime")
 	private String flightTime;
-	@Column(name="Duration")
-	private String flightDuration;
-	@Column(name="Fare")
+	@Column(name="duration")
+	private String duration;
+	@Column(name="fare")
 	private double fare;
-	@Column(name="Avalability")
-	private char seatAvalability;
-	@Column(name="Flight_Class")
+	@Column(name="avalability")
+	private char avalability;
+	@Column(name="flightClass")
 	private String flightClass;
 	public String getFlightNo() {
 		return flightNo;
@@ -44,21 +44,21 @@ public class Flight {
 		this.flightNo = flightNo;
 	}
 	public String getDepartureLoc() {
-		return departureLoc;
+		return departureLocation;
 	}
 	public void setDepartureLoc(String departureLoc) {
-		this.departureLoc = departureLoc;
+		this.departureLocation = departureLoc;
 	}
 	public String getArrivalLoc() {
-		return arrivalLoc;
+		return arrivalLocation;
 	}
 	public void setArrivalLoc(String arrivalLoc) {
-		this.arrivalLoc = arrivalLoc;
+		this.arrivalLocation = arrivalLoc;
 	}
-	public Date getValidTill() {
+	public String getValidTill() {
 		return validTill;
 	}
-	public void setValidTill(Date validTill) {
+	public void setValidTill(String validTill) {
 		this.validTill = validTill;
 	}
 	public String getFlightTime() {
@@ -68,10 +68,10 @@ public class Flight {
 		this.flightTime = flightTime;
 	}
 	public String getFlightDuration() {
-		return flightDuration;
+		return duration;
 	}
 	public void setFlightDuration(String flightDuration) {
-		this.flightDuration = flightDuration;
+		this.duration = flightDuration;
 	}
 	public double getFare() {
 		return fare;
@@ -80,10 +80,10 @@ public class Flight {
 		this.fare = fare;
 	}
 	public char getSeatAvalability() {
-		return seatAvalability;
+		return avalability;
 	}
 	public void setSeatAvalability(char seatAvalability) {
-		this.seatAvalability = seatAvalability;
+		this.avalability = seatAvalability;
 	}
 	public String getFlightClass() {
 		return flightClass;
@@ -93,10 +93,11 @@ public class Flight {
 	}
 	@Override
 	public String toString() {
-		return "Flight [flightId=" + flightId + ", flightNo=" + flightNo + ", departureLoc=" + departureLoc
-				+ ", arrivalLoc=" + arrivalLoc + ", validTill=" + validTill + ", flightTime=" + flightTime
-				+ ", flightDuration=" + flightDuration + ", fare=" + fare + ", seatAvalability=" + seatAvalability
-				+ ", flightClass=" + flightClass + "]";
+		return "Flight [FlightId=" + flightId + ", FlightNo=" + flightNo + ", DepartureLocation=" + departureLocation
+				+ ", ArrivalLocation=" + arrivalLocation + ", validTill=" + validTill + ", FlightTime=" + flightTime
+				+ ", Duration=" + duration + ", Fare=" + fare + ", Avalability=" + avalability + ", FlightClass="
+				+ flightClass + "]";
 	}
+	
 
 }
